@@ -17,6 +17,10 @@ app.use("/", require("./routes/root"));
 const genreRoute = require("./routes/genreRoutes");
 app.use("/genre", genreRoute);
 
+// Artist Route
+const artistRoute = require("./routes/artistRoutes");
+app.use("/artist", artistRoute);
+
 app.all("*", (req, res) => {
   res.status(404);
   if (req.accepts("html")) {
